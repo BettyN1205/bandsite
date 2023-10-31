@@ -38,10 +38,12 @@ a {
 
 .logo {
   background-color: #323232;
+  width: 120px;
+  height: 20px;
   color: #FFFFFF;
   text-align: center;
   margin: 1rem;
-  font-size: 24px;
+  font-size: 1.3rem;
 }
 
 .header {
@@ -133,8 +135,132 @@ a {
   margin-top: 3rem;
 }
 
+.cover {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
 #first {
   font-weight: 600;
   color: #FFFFFF;
   border-bottom: 5px solid #FFFFFF;
+}
+
+.hero {
+  width: 100vw;
+  height: 90vh;
+  margin: 0 auto;
+  background-image: url(../assets/Images/hero-bio.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hero__container {
+  width: 1280px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.hero__title {
+  font-size: 60px;
+  line-height: 68px;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 2px;
+  font-weight: 600;
+  margin-left: 6rem;
+}
+
+.musicians {
+  width: 100vw;
+  height: auto;
+  background-color: #FAFAFA;
+}
+.musicians__title {
+  font-size: 36px;
+  line-height: 44px;
+  font-weight: 700;
+  font-weight: 600;
+  margin-left: 12rem;
+  padding-top: 3rem;
+}
+.musicians__container {
+  width: 1280px;
+  height: auto;
+  margin: 0 auto;
+  padding-bottom: 3rem;
+}
+.musicians__pic {
+  margin: 2rem 12rem;
+  height: 30rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.musicians__pic img {
+  width: 100%;
+}
+.musicians__pic-info {
+  margin: 0 12rem;
+}
+.musicians__pic-info-1 {
+  font-size: 1.5rem;
+  width: 75%;
+  font-weight: 600;
+  color: #323232;
+}
+.musicians__pic-info-2 {
+  margin-top: 1rem;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #323232;
+  margin-bottom: 2rem;
+}
+.musicians__detail-title {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 600;
+  margin: 1rem 12rem;
+}
+.musicians__detail {
+  margin: 1rem 12rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+}
+
+.gallery {
+  width: 100vw;
+  height: auto;
+  background-color: rgba(225, 225, 225, 0.5);
+}
+.gallery__title {
+  padding: 2rem 11rem;
+  font-size: 36px;
+  line-height: 44px;
+  font-weight: 700;
+  font-weight: 600;
+}
+.gallery__container {
+  width: 1280px;
+  height: auto;
+  margin: 0 auto;
+}
+.gallery__pic__container {
+  margin: 0 6rem;
+  padding-bottom: 3rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.gallery__pic__container img {
+  width: 100%;
+  height: 100%;
 }/*# sourceMappingURL=bio.css.map */

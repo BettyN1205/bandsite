@@ -4,9 +4,123 @@
 
 
 
-
 #first{
     font-weight: 600;
     color: $White;
     border-bottom: 5px solid $White;
+}
+
+.hero{
+    width: 100vw;
+    height: 90vh;
+    margin: 0 auto;
+    background-image: url(../assets/Images/hero-bio.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+.hero__container{
+    width: 1280px;
+    height: 100%;
+    margin: 0 auto;
+    display:flex;
+    align-items: center;
+}
+
+.hero__title{
+    @include deskHeader1;
+    color: white;
+    letter-spacing: 2px;
+    font-weight: 600;
+    margin-left: 6rem;
+}
+
+.musicians{
+    width: 100vw;
+    height: auto;
+    background-color:$Alabaster;
+
+    &__title{
+        @include deskHeader2;
+        font-weight: 600;
+        margin-left: 12rem;
+        padding-top: 3rem;
+    }
+
+    &__container{
+        width: 1280px;
+        height: auto;
+        margin: 0 auto;
+        padding-bottom: 3rem;
+    }
+
+    &__pic{
+        margin: 2rem 12rem;
+        height: 30rem;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        & img{
+            width: 100%;
+        }
+    }
+    &__pic-info{
+        margin: 0 12rem;
+        &-1{
+            font-size: 1.5rem;
+            width: 75%;
+            font-weight: 600;
+            color: $Black;
+        }
+        &-2{
+            margin-top: 1rem;
+            font-weight: 600;
+            font-size: 1rem;
+            color: $Black;
+            margin-bottom: 2rem;
+        }
+    }
+
+    &__detail-title{
+        @include deskSubheader;
+        margin: 1rem 12rem;
+    }
+
+    &__detail{
+        margin: 1rem 12rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        @include deskBody;
+    }
+}
+
+.gallery{
+    width: 100vw;
+    height: auto;
+    background-color:rgba($color: $Mercury, $alpha: 0.5);
+    &__title{
+        padding: 2rem 11rem;
+        @include deskHeader2;
+        font-weight: 600;
+    }
+    &__container{
+        width: 1280px;
+        height: auto;
+        margin: 0 auto;
+    }
+    &__pic__container{ 
+        margin: 0 6rem;
+        padding-bottom: 3rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        & img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+
 }
