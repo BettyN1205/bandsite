@@ -1,0 +1,151 @@
+@use './variables' as *;
+@use './mixin' as *;
+
+
+@font-face {
+    font-family: 'AvenirNext';
+    src: url('../../assets/Font/AvenirNextLTPro.ttf') format('truetype');
+    src:url('../../assets/Font/AvenirNextLTPro-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'AvenirNext';
+    src: url('../../assets/Font/AvenirNextLTProBold.ttf') format('truetype');
+    src:url('../../assets/Font/AvenirNextLTPro-Bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'AvenirNext';
+    src: url('../../assets/Font/AvenirNextLTProDemi.ttf') format('truetype');
+    src:url('../../assets/Font/AvenirNextLTPro-Demi.otf') format('opentype');
+    font-weight: 600;
+    font-style: normal;
+  }
+  
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: AvenirNext;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+.logo{
+    background-color: $Black;
+    // width: 120px;
+    // height: 20px;
+    color: $White;
+    text-align: center;
+    margin: 1rem;
+    font-size: 24px;
+ 
+}
+
+.header{
+    width: 100vw;
+    height: auto;
+    background-color: $Black;
+
+    &__container{
+        width: 1280px;
+        height: 12vh;
+        margin: 0 auto;
+        padding-left: 5rem;
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
+    }
+
+    &__nav-list{
+        display: flex;
+        &-item{
+            margin-left: 2rem;
+            color: $Silver;
+            @include deskFooter;
+            line-height: 12.1vh;
+            &:hover{
+                border-bottom: 5px solid $White;
+                color: $White;
+            }
+        }
+    }
+}
+
+
+.footer{
+    width: 100vw;
+    height: auto;
+    background-color: $Black;
+    &__container{
+        width: 1280px;
+        margin: 0 auto;
+        padding: 2rem 5rem;
+        box-sizing: border-box;
+    }
+
+    &__contact{
+        display: flex;
+        align-items: center;
+
+        &-title{
+            @include deskHeader2;
+            font-weight: 600;
+            color: $White;
+            margin-right: 3rem;
+        }
+
+        &-icons{
+            margin-right: 1.5rem;
+            & img{
+                width: 25px;
+                height: 25px;
+                vertical-align: bottom;
+            }
+
+        }
+        &-logo{
+            margin-left: auto;
+        }  
+    }
+
+    &__info{
+        display: flex;
+        margin-top: 2rem;
+        @include deskFooter;
+        color: $White;
+
+        &-detail{
+            margin-right: 4rem;
+        }
+        &-text.address, &-text.email{
+            margin-top: 2rem; 
+        }
+        &-text.agency{
+            font-weight: 600;
+        }
+    }
+
+    &__copyright{
+        @include deskFooter;
+        color: $White;
+
+        margin-top: 3rem;
+        
+    }
+}
+
+

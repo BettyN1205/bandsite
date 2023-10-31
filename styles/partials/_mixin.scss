@@ -1,0 +1,53 @@
+@mixin mobileHeader{
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 700;
+}
+
+@mixin mobileSubheader{
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 600;
+}
+
+@mixin mobileBodyFooter{
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 400;
+}
+
+@mixin deskHeader1{
+    font-size: 60px;
+    line-height: 68px;
+    font-weight: 700;
+}
+
+@mixin deskHeader2{
+    font-size: 36px;
+    line-height: 44px;
+    font-weight: 700;
+}
+
+@mixin deskSubheader{
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 600;
+}
+
+@mixin deskBody{
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+}
+
+@mixin deskFooter{
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+}
+
+@mixin buttons($buttonText){
+    font-size: $buttonText;
+    line-height: 20px;
+    font-weight: 700;
+}

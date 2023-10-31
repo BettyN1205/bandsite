@@ -1,0 +1,140 @@
+@font-face {
+  font-family: "AvenirNext";
+  src: url("../../assets/Font/AvenirNextLTPro.ttf") format("truetype");
+  src: url("../../assets/Font/AvenirNextLTPro-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "AvenirNext";
+  src: url("../../assets/Font/AvenirNextLTProBold.ttf") format("truetype");
+  src: url("../../assets/Font/AvenirNextLTPro-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "AvenirNext";
+  src: url("../../assets/Font/AvenirNextLTProDemi.ttf") format("truetype");
+  src: url("../../assets/Font/AvenirNextLTPro-Demi.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: AvenirNext;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.logo {
+  background-color: #323232;
+  color: #FFFFFF;
+  text-align: center;
+  margin: 1rem;
+  font-size: 24px;
+}
+
+.header {
+  width: 100vw;
+  height: auto;
+  background-color: #323232;
+}
+.header__container {
+  width: 1280px;
+  height: 12vh;
+  margin: 0 auto;
+  padding-left: 5rem;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+.header__nav-list {
+  display: flex;
+}
+.header__nav-list-item {
+  margin-left: 2rem;
+  color: #AFAFAF;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  line-height: 12.1vh;
+}
+.header__nav-list-item:hover {
+  border-bottom: 5px solid #FFFFFF;
+  color: #FFFFFF;
+}
+
+.footer {
+  width: 100vw;
+  height: auto;
+  background-color: #323232;
+}
+.footer__container {
+  width: 1280px;
+  margin: 0 auto;
+  padding: 2rem 5rem;
+  box-sizing: border-box;
+}
+.footer__contact {
+  display: flex;
+  align-items: center;
+}
+.footer__contact-title {
+  font-size: 36px;
+  line-height: 44px;
+  font-weight: 700;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin-right: 3rem;
+}
+.footer__contact-icons {
+  margin-right: 1.5rem;
+}
+.footer__contact-icons img {
+  width: 25px;
+  height: 25px;
+  vertical-align: bottom;
+}
+.footer__contact-logo {
+  margin-left: auto;
+}
+.footer__info {
+  display: flex;
+  margin-top: 2rem;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  color: #FFFFFF;
+}
+.footer__info-detail {
+  margin-right: 4rem;
+}
+.footer__info-text.address, .footer__info-text.email {
+  margin-top: 2rem;
+}
+.footer__info-text.agency {
+  font-weight: 600;
+}
+.footer__copyright {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  color: #FFFFFF;
+  margin-top: 3rem;
+}
+
+#first {
+  font-weight: 600;
+  color: #FFFFFF;
+  border-bottom: 5px solid #FFFFFF;
+}/*# sourceMappingURL=bio.css.map */

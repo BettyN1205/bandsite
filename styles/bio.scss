@@ -1,1 +1,12 @@
-@use '_variables' as *;
+@use 'partials/variables' as *;
+@use 'partials/mixin' as *;
+@use 'partials/global' as *;
+
+
+
+
+#first{
+    font-weight: 600;
+    color: $White;
+    border-bottom: 5px solid $White;
+}
