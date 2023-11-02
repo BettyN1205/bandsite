@@ -82,6 +82,41 @@ a{
             }
         }
     }
+
+    @media (max-width: $mobile){    
+        &__container {
+            width: 100vw;
+            height: auto;
+            flex-direction: column;
+            padding-left: 0px;
+        }
+          .logo{
+            font-size: 2.5em;
+            margin: 1.5rem 0;
+            margin-left: -4rem;
+        }
+        &__nav {
+            width: 100%; 
+        }
+        &__nav-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }   
+        &__nav-list-item{
+            line-height: 2rem;
+            font-size: 1.5em;
+            padding: 1rem 0;
+            margin: 0;
+            text-align: center;
+        }
+    }
+
+    @media (min-width: 768px) and (max-width: 1279px){
+
+        &__container{
+            width: 100%;
+        }
+    }
 }
 
 
@@ -141,15 +176,77 @@ a{
     &__copyright{
         @include deskFooter;
         color: $White;
-
         margin-top: 3rem;
-        
+    }
+
+    &__copyright-logo{
+        display: none;
+    }
+
+    @media (max-width: $mobile){
+        @include mobileBodyFooter;
+        &__container{
+            width: 100%; 
+            height: 100%;
+            padding: 2rem 1rem; 
+            flex-direction: column; 
+        }
+
+        &__info {
+            flex-direction: column; 
+          }
+
+        &__contact-logo{
+            display: none;
+        }
+        &__copyright-logo{
+            display: block;
+            margin-top: 2rem;
+            margin-left: -0.5rem;
+        }
+        &__copyright{
+            margin: 0;
+            margin-bottom: 2rem;
+        }
+
+        .address{
+            margin-top: 1rem;
+        }
+        .email{
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        &__contact{
+            display: grid;
+            grid-template-columns: repeat(15,1fr);
+
+        &-title {
+            margin: 0; 
+            grid-column: 1/18;
+        }
+
+        &-icons {
+            margin-top: 1rem; 
+          }
+
+        }
+    }
+
+    @media (min-width: 768px) and (max-width: 1279px){
+
+        &__container{
+            width: 100%;
+        }
+        &__contact-logo{
+            margin-left: 20rem;
+        }
     }
 }
 
 .cover{
     width: 100%;
     height: 100%;
-    background-color: rgba($color: $DarkBlack, $alpha: 0.5);
+    background-color: rgba($color: $Black, $alpha: 0.5);
 }
 

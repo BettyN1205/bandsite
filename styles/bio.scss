@@ -17,6 +17,11 @@
     background-image: url(../assets/Images/hero-bio.jpg);
     background-repeat: no-repeat;
     background-size:cover;
+
+    @media (max-width: $mobile){
+        width: 100%;
+        height: 70vh;
+    }
 }
 
 .hero__container{
@@ -25,6 +30,10 @@
     margin: 0 auto;
     display:flex;
     align-items: center;
+
+    @media (min-width: 768px) and (max-width: 1279px){
+            width: 100%;
+    }
 }
 
 .hero__title{
@@ -33,6 +42,13 @@
     letter-spacing: 2px;
     font-weight: 600;
     margin-left: 6rem;
+
+    @media (max-width: $mobile){
+        @include mobileHeader;
+        margin-left: 2rem;
+        font-size: 3em;
+        font-weight: 600;
+     }
 }
 
 .musicians{
@@ -45,6 +61,10 @@
         font-weight: 600;
         margin-left: 12rem;
         padding-top: 3rem;
+        @media (max-width: $mobile){
+            margin-left: 1rem;
+            padding-top:2rem;
+        }
     }
 
     &__container{
@@ -52,6 +72,12 @@
         height: auto;
         margin: 0 auto;
         padding-bottom: 3rem;
+
+        @media (max-width: $mobile){
+            width: 100%;
+            margin: 1rem;
+            padding-bottom: 1rem;
+        }
     }
 
     &__pic{
@@ -62,9 +88,16 @@
         justify-content: center;
         align-items: center;
 
+        @media (max-width: $mobile){
+            width: 95%;
+            height: 100%;
+            margin: 0;
+        }
+
         & img{
             width: 100%;
         }
+        
     }
     &__pic-info{
         margin: 0 12rem;
@@ -81,11 +114,30 @@
             color: $Black;
             margin-bottom: 2rem;
         }
+
+        @media (max-width: $mobile){
+            margin: 1rem;
+            &-1{
+                width: 96%;
+                @include mobileHeader;
+                font-weight: 600;
+                font-size:22px;
+            }
+            &-2{
+                @include mobileHeader;
+                font-weight: 600;
+                font-size:22px;
+            }
+        }
     }
 
     &__detail-title{
         @include deskSubheader;
         margin: 1rem 12rem;
+
+        @media (max-width: $mobile){
+            margin: 1rem;
+        }
     }
 
     &__detail{
@@ -94,6 +146,18 @@
         grid-template-columns: 1fr 1fr;
         gap: 1rem;
         @include deskBody;
+
+        @media (max-width: $mobile){
+            width: 95%;
+            display: block;
+            margin: 1rem;
+            @include mobileHeader;
+            font-weight: 400;
+            font-size: 20px;
+            & p{
+                margin-bottom: 1rem;
+            }
+        }
     }
 }
 
@@ -101,15 +165,24 @@
     width: 100vw;
     height: auto;
     background-color:rgba($color: $Mercury, $alpha: 0.5);
+
     &__title{
         padding: 2rem 11rem;
         @include deskHeader2;
         font-weight: 600;
+
+        @media (max-width: $mobile){
+            padding: 1rem;
+        }
     }
     &__container{
         width: 1280px;
         height: auto;
         margin: 0 auto;
+        @media (max-width: $mobile){
+            width: 100%;
+    
+        }
     }
     &__pic__container{ 
         margin: 0 6rem;
@@ -120,6 +193,12 @@
         & img{
             width: 100%;
             height: 100%;
+        }
+
+        @media (max-width: $mobile){
+            margin: 0 1rem;
+            grid-template-columns: 1fr;
+            padding-bottom: 1rem;
         }
     }
 
