@@ -111,11 +111,21 @@ a{
         }
     }
 
-    @media (min-width: 768px) and (max-width: 1279px){
-
+    @include tabletScreen{
         &__container{
             width: 100%;
+            height: auto;
+            padding-left: 1.3rem;
         }
+
+        &__nav-list-item{
+            line-height: 4rem;
+        }
+
+        .logo{
+            font-size: 1.5em;
+        }
+     
     }
 }
 
@@ -233,13 +243,18 @@ a{
         }
     }
 
-    @media (min-width: 768px) and (max-width: 1279px){
-
+    @include tabletScreen{
         &__container{
             width: 100%;
         }
         &__contact-logo{
             margin-left: 20rem;
+        }
+        &__contact-title {
+            white-space: nowrap;
+        }
+        &__contact-logo{
+            margin-left: 5rem;
         }
     }
 }

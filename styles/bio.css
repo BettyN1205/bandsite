@@ -105,6 +105,14 @@ a {
 @media (min-width: 768px) and (max-width: 1279px) {
   .header__container {
     width: 100%;
+    height: auto;
+    padding-left: 1.3rem;
+  }
+  .header__nav-list-item {
+    line-height: 4rem;
+  }
+  .header .logo {
+    font-size: 1.5em;
   }
 }
 
@@ -222,6 +230,12 @@ a {
   .footer__contact-logo {
     margin-left: 20rem;
   }
+  .footer__contact-title {
+    white-space: nowrap;
+  }
+  .footer__contact-logo {
+    margin-left: 5rem;
+  }
 }
 
 .cover {
@@ -230,7 +244,7 @@ a {
   background-color: rgba(50, 50, 50, 0.5);
 }
 
-#first {
+.currentPage {
   font-weight: 600;
   color: #FFFFFF;
   border-bottom: 5px solid #FFFFFF;
@@ -247,6 +261,11 @@ a {
 @media (max-width: 767px) {
   .hero {
     width: 100%;
+    height: 70vh;
+  }
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  .hero {
     height: 70vh;
   }
 }
@@ -283,6 +302,11 @@ a {
     font-weight: 600;
   }
 }
+@media (min-width: 768px) and (max-width: 1279px) {
+  .hero__title {
+    margin-left: 2.3rem;
+  }
+}
 
 .musicians {
   width: 100vw;
@@ -303,6 +327,12 @@ a {
     padding-top: 2rem;
   }
 }
+@media (min-width: 768px) and (max-width: 1279px) {
+  .musicians__title {
+    margin-left: 2.3rem;
+    margin-bottom: 2rem;
+  }
+}
 .musicians__container {
   width: 1280px;
   height: auto;
@@ -314,6 +344,13 @@ a {
     width: 100%;
     margin: 1rem;
     padding-bottom: 1rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  .musicians__container {
+    width: 100%;
+    margin: 0;
+    padding-bottom: 2rem;
   }
 }
 .musicians__pic {
@@ -329,6 +366,12 @@ a {
     width: 95%;
     height: 100%;
     margin: 0;
+  }
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  .musicians__pic {
+    margin: 0 5rem;
+    padding: 0;
   }
 }
 .musicians__pic img {
@@ -370,6 +413,14 @@ a {
     font-size: 22px;
   }
 }
+@media (min-width: 768px) and (max-width: 1279px) {
+  .musicians__pic-info {
+    margin: 2rem 5rem;
+  }
+  .musicians__pic-info-1 {
+    width: 100%;
+  }
+}
 .musicians__detail-title {
   font-size: 24px;
   line-height: 32px;
@@ -379,6 +430,11 @@ a {
 @media (max-width: 767px) {
   .musicians__detail-title {
     margin: 1rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  .musicians__detail-title {
+    margin: 2.3rem 5rem;
   }
 }
 .musicians__detail {
@@ -405,6 +461,11 @@ a {
     margin-bottom: 1rem;
   }
 }
+@media (min-width: 768px) and (max-width: 1279px) {
+  .musicians__detail {
+    margin: 2.3rem 5rem;
+  }
+}
 
 .gallery {
   width: 100vw;
@@ -423,12 +484,22 @@ a {
     padding: 1rem;
   }
 }
+@media (min-width: 768px) and (max-width: 1279px) {
+  .gallery__title {
+    padding: 2.3rem;
+  }
+}
 .gallery__container {
   width: 1280px;
   height: auto;
   margin: 0 auto;
 }
 @media (max-width: 767px) {
+  .gallery__container {
+    width: 100%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1279px) {
   .gallery__container {
     width: 100%;
   }
@@ -449,5 +520,16 @@ a {
     margin: 0 1rem;
     grid-template-columns: 1fr;
     padding-bottom: 1rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  .gallery__pic__container {
+    margin: 0;
+    padding: 0 2.3rem;
+    padding-bottom: 2.5rem;
+  }
+  .gallery__pic__container img {
+    width: 100%;
+    height: auto;
   }
 }/*# sourceMappingURL=bio.css.map */
