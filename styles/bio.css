@@ -34,6 +34,11 @@ li {
 
 a {
   text-decoration: none;
+  color: #FFFFFF;
+}
+
+a:visited {
+  color: inherit;
 }
 
 .logo {
@@ -209,6 +214,7 @@ a {
   .footer .email {
     margin-top: 1rem;
     margin-bottom: 2rem;
+    color: #FFFFFF;
   }
   .footer__contact {
     display: grid;
@@ -237,12 +243,6 @@ a {
   }
 }
 
-.cover {
-  width: 100%;
-  height: 100%;
-  background-color: rgba(50, 50, 50, 0.5);
-}
-
 .currentPage {
   font-weight: 600;
   color: #FFFFFF;
@@ -256,6 +256,7 @@ a {
   background-image: url(../assets/Images/hero-bio.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  position: relative;
 }
 @media (min-width: 768px) and (max-width: 1279px) {
   .hero {
@@ -268,6 +269,10 @@ a {
     width: 100%;
     height: 70vh;
   }
+}
+
+.hero:hover .cover {
+  opacity: 0;
 }
 
 .hero__container {
@@ -551,4 +556,21 @@ a {
     width: 100%;
     height: auto;
   }
+}
+.gallery__pic {
+  position: relative;
+}
+
+.gallery-mask, .cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(50, 50, 50, 0.5);
+  transition: opacity 0.3s;
+}
+
+.gallery__pic:hover .gallery-mask, .gallery__pic:hover .cover {
+  opacity: 0;
 }/*# sourceMappingURL=bio.css.map */
