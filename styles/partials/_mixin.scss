@@ -1,3 +1,5 @@
+
+
 @mixin mobileHeader{
     font-size: 24px;
     line-height: 32px;
@@ -59,6 +61,8 @@
 }
 
 @mixin mobileScreen{
-    
+    @media (max-width:767px) {
+        @content;
+    }
 }
 

@@ -46,8 +46,8 @@ a{
 
 .logo{
     background-color: $Black;
-    width: 120px;
-    height: 20px;
+    width: 7.5rem;
+    height: 1.25rem;
     color: $White;
     text-align: center;
     margin: 1rem;
@@ -63,7 +63,6 @@ a{
         width: 1280px;
         height: 12vh;
         margin: 0 auto;
-        padding-left: 5rem;
         display: flex;
         align-items: center;
         box-sizing: border-box;
@@ -83,7 +82,7 @@ a{
         }
     }
 
-    @media (max-width: $mobile){    
+    @include mobileScreen{
         &__container {
             width: 100vw;
             height: auto;
@@ -193,7 +192,7 @@ a{
         display: none;
     }
 
-    @media (max-width: $mobile){
+    @include mobileScreen{
         @include mobileBodyFooter;
         &__container{
             width: 100%; 
@@ -231,16 +230,16 @@ a{
             display: grid;
             grid-template-columns: repeat(15,1fr);
 
-        &-title {
+            &-title {
             margin: 0; 
             grid-column: 1/18;
-        }
+            }
 
-        &-icons {
+            &-icons {
             margin-top: 1rem; 
-          }
-
+            }
         }
+
     }
 
     @include tabletScreen{
