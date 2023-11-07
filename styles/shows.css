@@ -258,6 +258,24 @@ body {
   width: 100%;
   height: auto;
 }
+@media (min-width: 768px) and (max-width: 1279px) {
+  .hero {
+    width: 100vw;
+  }
+}
+.hero__container {
+  height: auto;
+  background-image: url(../assets/Images/hero-shows.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 2rem;
+  position: relative;
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  .hero__container {
+    height: 70vh;
+  }
+}
 .hero__title {
   color: #FFFFFF;
   font-size: 2rem;
@@ -270,35 +288,80 @@ body {
   font-weight: 600;
   width: 80%;
 }
-
-.hero__container {
-  height: auto;
-  background-image: url(../assets/Images/hero-shows.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  padding: 2rem;
+.hero__title, .hero__subtitle {
+  position: relative;
+  z-index: 2;
+}
+.hero__gallery-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(50, 50, 50, 0.5);
+  transition: opacity 0.3s;
+  z-index: 1;
 }
 
 .shows {
   height: auto;
   padding: 2rem;
 }
+@media (min-width: 768px) and (max-width: 1279px) {
+  .shows {
+    padding: 3rem;
+    width: 100vw;
+    box-sizing: border-box;
+  }
+}
 .shows__title {
   font-size: 3rem;
   font-weight: 600;
   margin: 2rem 0;
 }
+@media (min-width: 768px) and (max-width: 1279px) {
+  .shows__title {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+}
 .shows__container {
   border-bottom: 1px solid #AFAFAF;
+}
+.shows__container:hover {
+  background-color: #FAFAFA;
+  cursor: pointer;
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  .shows__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+  }
 }
 .shows__subtitle {
   margin: 1rem 0;
   color: #AFAFAF;
 }
+@media (min-width: 768px) and (max-width: 1279px) {
+  .shows__subtitle {
+    display: none;
+  }
+}
+.shows .first {
+  display: block;
+  padding: 24px 0;
+  font-size: 1.5rem;
+}
 .shows__content {
   margin-bottom: 1rem;
   font-size: 1.5rem;
   color: #323232;
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  .shows__content {
+    padding: 0 18px 24px 0;
+  }
 }
 .shows .date {
   font-weight: 600;
@@ -314,4 +377,12 @@ body {
   font-size: 2rem;
   font-weight: 600;
   border-radius: 5px;
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  .shows__button {
+    width: 22%;
+    font-size: 1.3rem;
+    height: 4rem;
+    line-height: 4rem;
+  }
 }/*# sourceMappingURL=shows.css.map */

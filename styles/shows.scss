@@ -15,6 +15,23 @@ body{
     width: 100%;
     height: auto;
 
+    @include tabletScreen{
+        width: 100vw;
+    }
+
+    &__container{
+        height: auto;
+        background-image: url(../assets/Images/hero-shows.jpg);
+        background-size:cover;
+        background-repeat: no-repeat;
+        padding: 2rem;
+        position: relative;
+    
+        @include tabletScreen{
+            height: 70vh;
+        }
+    }
+
     &__title{
         color: $White;
         font-size: 2rem;
@@ -27,39 +44,74 @@ body{
         font-weight: 600;
         width: 80%;
     }
+
+    &__title, &__subtitle {
+        position: relative; 
+        z-index: 2; 
+    }
+
+    &__gallery-mask{
+        @include coverStyle;
+        z-index: 1;
+    }
 }
 
-.hero__container{
-    height: auto;
-    background-image: url(../assets/Images/hero-shows.jpg);
-    background-size:cover;
-    background-repeat: no-repeat;
-    padding: 2rem;
-}
 
 .shows{
     height: auto;
     padding: 2rem;
 
+    @include tabletScreen{
+        padding: 3rem;
+        width: 100vw;
+        box-sizing: border-box;
+    }
+
     &__title{
         font-size: 3rem;
         font-weight: 600;
         margin: 2rem 0;
+        @include tabletScreen{
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
     }
 
     &__container{
         border-bottom: 1px solid $Silver;
+        &:hover{
+            background-color: $Alabaster;
+            cursor: pointer;
+        }
+        @include tabletScreen{
+            display: flex;
+            justify-content:space-between;
+            align-items: end;
+
+        }
     }
 
     &__subtitle{
         margin: 1rem 0;
         color: $Silver;
+        @include tabletScreen{
+            display: none;
+        }
+    }
+    .first{
+        display: block;
+        padding: 24px 0;
+        font-size: 1.5rem;
     }
 
     &__content{
         margin-bottom: 1rem;
         font-size: 1.5rem;
         color: $Black;
+
+        @include tabletScreen{
+            padding: 0 18px 24px 0;
+        }
     }
 
     .date{
@@ -77,5 +129,12 @@ body{
         font-size: 2rem;
         font-weight: 600;
         border-radius: 5px;
+
+        @include tabletScreen{
+            width: 22%;
+            font-size: 1.3rem;
+            height: 4rem;
+            line-height: 4rem;
+        }
     }
 }
