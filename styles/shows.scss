@@ -1,0 +1,81 @@
+@use 'partials/variables' as *;
+@use 'partials/mixin' as *;
+@use 'partials/global' as *;
+
+
+body{
+    max-width: 767px;
+}
+
+.current{
+    @include currentPage;
+}
+
+.hero{
+    width: 100%;
+    height: auto;
+
+    &__title{
+        color: $White;
+        font-size: 2rem;
+        font-weight: 600;
+        margin: 2rem 0;
+    }
+    &__subtitle{
+        color: $White;
+        font-size: 4rem;
+        font-weight: 600;
+        width: 80%;
+    }
+}
+
+.hero__container{
+    height: auto;
+    background-image: url(../assets/Images/hero-shows.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+    padding: 2rem;
+}
+
+.shows{
+    height: auto;
+    padding: 2rem;
+
+    &__title{
+        font-size: 3rem;
+        font-weight: 600;
+        margin: 2rem 0;
+    }
+
+    &__container{
+        border-bottom: 1px solid $Silver;
+    }
+
+    &__subtitle{
+        margin: 1rem 0;
+        color: $Silver;
+    }
+
+    &__content{
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+        color: $Black;
+    }
+
+    .date{
+        font-weight: 600;
+    }
+
+    &__button{
+        width:100%;
+        height: 5rem;
+        background-color: $Black;
+        margin: 2rem 0;
+        text-align: center;
+        color: $White;
+        line-height: 5rem;
+        font-size: 2rem;
+        font-weight: 600;
+        border-radius: 5px;
+    }
+}

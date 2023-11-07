@@ -1,4 +1,4 @@
-
+@use './variables' as *;
 
 @mixin mobileHeader{
     font-size: 24px;
@@ -61,8 +61,14 @@
 }
 
 @mixin mobileScreen{
-    @media (max-width:767px) {
+    @media (min-width: 320px) and (max-width:767px) {
         @content;
     }
+}
+
+@mixin currentPage{
+    font-weight: 600;
+    color: $White;
+    border-bottom: 5px solid $White;
 }
 

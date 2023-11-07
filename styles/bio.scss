@@ -5,9 +5,7 @@
 
 
 .currentPage{
-    font-weight: 600;
-    color: $White;
-    border-bottom: 5px solid $White;
+    @include currentPage;
 }
 
 .hero{
