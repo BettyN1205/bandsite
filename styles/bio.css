@@ -574,4 +574,106 @@ a:visited {
 
 .gallery__pic:hover .gallery-mask, .gallery__pic:hover .cover {
   opacity: 0;
+}
+
+.comments {
+  max-width: 767px;
+  padding: 2rem;
+}
+.comments__title {
+  margin: 1rem;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+  font-size: 3rem;
+  font-weight: 600;
+}
+.comments__container {
+  padding: 1rem;
+}
+.comments__new {
+  display: flex;
+}
+.comments__new-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-image: url(../assets/Images/Mohan-muruge.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-right: 2rem;
+  margin-top: 3rem;
+  flex: 0 0 auto;
+}
+.comments__new-textBox {
+  flex: 1;
+}
+.comments__new-subtitle {
+  color: #AFAFAF;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 4px;
+}
+.comments__new-name {
+  min-height: 36px;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 12px;
+  border: 1px solid #E1E1E1;
+  font-size: 1.3rem;
+  color: #000000;
+}
+.comments__new-comment {
+  min-height: 10rem;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 12px;
+  border: 1px solid #E1E1E1;
+  font-size: 1.3rem;
+  color: #000000;
+}
+.comments__new-button {
+  width: 100%;
+  min-height: 36px;
+  margin: 1.5rem 0;
+  font-size: 1.5rem;
+  padding: 1rem;
+  background-color: #323232;
+  color: #FFFFFF;
+  border-radius: 4px;
+}
+.comments__history {
+  border-top: 1px solid #AFAFAF;
+  padding: 1rem 0;
+  display: flex;
+}
+.comments__history-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #E1E1E1;
+  margin-right: 2rem;
+  flex: 0 0 auto;
+}
+.comments__history-textBox {
+  flex: 1;
+}
+.comments__history-title {
+  font-size: 20px;
+  font-weight: 600;
+}
+.comments__history-time {
+  display: inline-block;
+  float: right;
+  font-size: 20px;
+  font-weight: 400;
+  color: #AFAFAF;
+}
+.comments__history-text {
+  margin-top: 1rem;
+  font-size: 1.3rem;
 }/*# sourceMappingURL=bio.css.map */

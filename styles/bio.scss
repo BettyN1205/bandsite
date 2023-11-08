@@ -291,3 +291,109 @@
 .gallery__pic:hover .gallery-mask {
     opacity: 0; 
 }
+
+// ---------------comments section (change to Mobile-first design)----------------
+
+.comments{
+    max-width: 767px;
+    padding: 2rem;
+
+    &__title{
+        margin: 1rem;
+        @include mobileHeader;
+        font-size: 3rem;
+        font-weight: 600;
+    }
+
+    &__container{
+        padding:1rem;
+    }
+
+    &__new{
+        display: flex;
+    }
+
+    &__new-img{
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-image: url(../assets/Images/Mohan-muruge.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin-right: 2rem;
+        margin-top: 3rem;
+        flex: 0 0 auto;
+    }
+
+    &__new-textBox{
+        flex: 1;
+    }
+
+    &__new-subtitle{
+        color: $Silver;
+        @include mobileSubheader;
+        margin-top: 1.5rem;
+        margin-bottom: 4px;
+    }
+
+    &__new-name{
+        min-height: 36px;
+        @include inputStyle;
+    }
+
+    &__new-comment{
+        min-height: 10rem;
+        @include inputStyle;
+    }
+
+    &__new-button{
+        width: 100%;
+        min-height: 36px;
+        margin: 1.5rem 0;
+        font-size: 1.5rem;
+        padding: 1rem;
+        background-color: $Black;
+        color: $White;
+        border-radius: 4px;
+    }
+
+    &__history{
+        border-top: 1px solid $Silver;
+        padding: 1rem 0;
+        display: flex;
+
+        &-img{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: $Mercury;
+            margin-right: 2rem;
+            flex: 0 0 auto;
+        }
+
+        &-textBox{
+            flex: 1;
+        }
+
+        &-title{
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        &-time{
+            display:inline-block;
+            float: right;
+            font-size: 20px;
+            font-weight: 400;
+            color: $Silver;
+        }
+
+        &-text{
+            margin-top: 1rem;
+            font-size: 1.3rem;
+        }
+
+    }
+
+
+}
