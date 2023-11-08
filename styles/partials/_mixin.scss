@@ -54,6 +54,12 @@
     font-weight: 700;
 }
 
+@mixin desktopScreen{
+    @media (min-width:1280px) {
+        @content;
+    }
+}
+
 @mixin tabletScreen{
     @media (min-width: 768px) and (max-width: 1279px){
         @content;

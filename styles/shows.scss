@@ -19,6 +19,11 @@ body{
         width: 100vw;
     }
 
+    @include desktopScreen{
+        width: 100vw;
+        margin: 0 auto;
+    }
+
     &__container{
         height: auto;
         background-image: url(../assets/Images/hero-shows.jpg);
@@ -30,6 +35,14 @@ body{
         @include tabletScreen{
             height: 70vh;
         }
+
+        @include desktopScreen{
+            height:90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+        }
     }
 
     &__title{
@@ -37,12 +50,20 @@ body{
         font-size: 2rem;
         font-weight: 600;
         margin: 2rem 0;
+
+        @include desktopScreen{
+            @include deskHeader2;
+        }
     }
     &__subtitle{
         color: $White;
         font-size: 4rem;
         font-weight: 600;
         width: 80%;
+
+        @include desktopScreen{
+            @include deskHeader1;
+        }
     }
 
     &__title, &__subtitle {
@@ -67,6 +88,15 @@ body{
         box-sizing: border-box;
     }
 
+    @include desktopScreen{
+        width: 100vw;
+        box-sizing: border-box;
+        padding: 3rem 6rem;
+        display: flex;
+        justify-content: space-between;
+    }
+
+
     &__title{
         font-size: 3rem;
         font-weight: 600;
@@ -74,6 +104,17 @@ body{
         @include tabletScreen{
             margin-top: 1rem;
             margin-bottom: 1rem;
+        }
+
+        @include desktopScreen{
+            flex: 0 0 auto;
+            margin: 0;
+         }
+    }
+    &__box{
+        @include desktopScreen{
+           flex: 1;
+           margin-left: 5rem;
         }
     }
 
@@ -87,7 +128,14 @@ body{
             display: flex;
             justify-content:space-between;
             align-items: end;
-
+            padding:0 1rem;
+        }
+        @include desktopScreen{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            padding:0 2rem;
         }
     }
 
@@ -97,11 +145,19 @@ body{
         @include tabletScreen{
             display: none;
         }
+        @include desktopScreen{
+            display: none;
+        }
     }
     .first{
         display: block;
         padding: 24px 0;
         font-size: 1.5rem;
+
+        @include desktopScreen{
+            margin-bottom: 2rem;
+            @include deskBody;
+        }
     }
 
     &__content{
@@ -111,6 +167,11 @@ body{
 
         @include tabletScreen{
             padding: 0 18px 24px 0;
+        }
+
+        @include desktopScreen{
+            padding: 0 18px 24px 0;
+            font-size: 1rem;
         }
     }
 
@@ -135,6 +196,13 @@ body{
             font-size: 1.3rem;
             height: 4rem;
             line-height: 4rem;
+        }
+
+        @include desktopScreen{
+            width: 20%;
+            font-size: 1rem;
+            height: 3rem;
+            line-height: 3rem;
         }
     }
 }
