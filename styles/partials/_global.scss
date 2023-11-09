@@ -35,6 +35,7 @@
 body{
     font-family: AvenirNext;
     min-width: 20rem;
+    max-width: 1920px;
 }
 
 li{
@@ -199,7 +200,6 @@ a:visited {
     }
 
     @include mobileScreen{
-        @include mobileBodyFooter;
         &__container{
             width: 100%; 
             height: 100%;
@@ -209,6 +209,7 @@ a:visited {
 
         &__info {
             flex-direction: column; 
+            @include mobileBodyFooter;
           }
 
         &__contact-logo{
@@ -222,6 +223,7 @@ a:visited {
         &__copyright{
             margin: 0;
             margin-bottom: 2rem;
+            @include mobileBodyFooter;
         }
 
         .address{

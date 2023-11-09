@@ -298,19 +298,40 @@
     max-width: 767px;
     padding: 2rem;
 
+    @include tabletScreen{
+           width: 100vw;
+           margin: 0 auto;
+    }
+
+    @include desktopScreen{
+        width: 100vw;
+           margin: 0 auto;
+    }
+
     &__title{
         margin: 1rem;
         @include mobileHeader;
-        font-size: 3rem;
+        font-size: 2.5rem;
         font-weight: 600;
+
+        // @include tabletScreen{
+        //     margin-left: -6rem;
+        // }
+
+        @include desktopScreen{
+            margin-left: -13rem;
+        }
+     
     }
 
     &__container{
         padding:1rem;
+
     }
 
     &__new{
         display: flex;
+        border-bottom: 2px solid $Mercury;
     }
 
     &__new-img{
@@ -332,18 +353,25 @@
     &__new-subtitle{
         color: $Silver;
         @include mobileSubheader;
+        display: inline-block;
         margin-top: 1.5rem;
         margin-bottom: 4px;
     }
 
     &__new-name{
         min-height: 36px;
+        width: 100%;
         @include inputStyle;
     }
 
     &__new-comment{
         min-height: 10rem;
+        width: 100%;
         @include inputStyle;
+        resize: none; 
+        overflow: auto; 
+        border: 1px solid $Mercury; 
+        outline: none; 
     }
 
     &__new-button{
@@ -358,7 +386,7 @@
     }
 
     &__history{
-        border-top: 1px solid $Silver;
+        border-bottom: 2px solid $Mercury;
         padding: 1rem 0;
         display: flex;
 

@@ -39,9 +39,19 @@ body{
         @include desktopScreen{
             height:90vh;
             display: flex;
-            justify-content: center;
+            justify-content:space-around;
             align-items: center;
             padding: 0;
+        }
+        
+    }
+
+    &__title-box{
+        @include desktopScreen{
+            flex: 1;
+            max-width: 50%;
+            box-sizing: border-box;
+            margin-left: 6rem;
         }
     }
 
@@ -66,7 +76,7 @@ body{
         }
     }
 
-    &__title, &__subtitle {
+    &__title, &__subtitle, &__media-iframe {
         position: relative; 
         z-index: 2; 
     }
@@ -74,6 +84,27 @@ body{
     &__gallery-mask{
         @include coverStyle;
         z-index: 1;
+    }
+
+    &__media {
+        @include desktopScreen{
+        flex: 1; 
+        max-width: 50%; 
+        box-sizing: border-box; 
+        }  
+    }
+
+    &__media-iframe{
+        width: 100%;
+        height: 166px;
+        margin-top: 2rem;
+
+        @include desktopScreen{
+            width: 80%;
+        }
+        @include tabletScreen{
+            width: 70%;
+        }
     }
 }
 
@@ -131,7 +162,6 @@ body{
             padding:0 1rem;
         }
         @include desktopScreen{
-            width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: end;
