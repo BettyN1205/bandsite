@@ -628,6 +628,18 @@ a:visited {
 .comments__new-textBox {
   flex: 1;
 }
+@media (min-width: 768px) and (max-width: 1279px) {
+  .comments__new-textBox {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media (min-width: 1280px) {
+  .comments__new-textBox {
+    display: flex;
+    flex-direction: column;
+  }
+}
 .comments__new-subtitle {
   color: #AFAFAF;
   font-size: 14px;
@@ -648,6 +660,10 @@ a:visited {
   font-size: 1.3rem;
   color: #000000;
 }
+.comments__new-name:focus {
+  border-color: #323232;
+  outline: none;
+}
 .comments__new-comment {
   min-height: 10rem;
   width: 100%;
@@ -663,6 +679,10 @@ a:visited {
   border: 1px solid #E1E1E1;
   outline: none;
 }
+.comments__new-comment:focus {
+  border-color: #323232;
+  outline: none;
+}
 .comments__new-button {
   width: 100%;
   min-height: 36px;
@@ -672,6 +692,22 @@ a:visited {
   background-color: #323232;
   color: #FFFFFF;
   border-radius: 4px;
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  .comments__new-button {
+    width: 25%;
+    align-self: flex-end;
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+}
+@media (min-width: 1280px) {
+  .comments__new-button {
+    width: 25%;
+    align-self: flex-end;
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
 }
 .comments__history {
   border-bottom: 2px solid #E1E1E1;

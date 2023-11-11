@@ -96,4 +96,9 @@
     border: 1px solid $Mercury;
     font-size: 1.3rem;
     color: $DarkBlack;
+    
+    &:focus {
+        border-color: $Black; 
+        outline: none;
+    }
 }

@@ -1,238 +1,236 @@
-@use 'partials/variables' as *;
-@use 'partials/mixin' as *;
-@use 'partials/global' as *;
+@use "partials/variables" as *;
+@use "partials/mixin" as *;
+@use "partials/global" as *;
 
-
-body{
-    max-width: 767px;
+body {
+  max-width: 767px;
 }
 
-.current{
-    @include currentPage;
+.current {
+  @include currentPage;
 }
 
-.hero{
-    width: 100%;
+.hero {
+  width: 100%;
+  height: auto;
+
+  @include tabletScreen {
+    width: 100vw;
+  }
+
+  @include desktopScreen {
+    width: 100vw;
+    margin: 0 auto;
+  }
+
+  &__container {
     height: auto;
-
-    @include tabletScreen{
-        width: 100vw;
-    }
-
-    @include desktopScreen{
-        width: 100vw;
-        margin: 0 auto;
-    }
-
-    &__container{
-        height: auto;
-        background-image: url(../assets/Images/hero-shows.jpg);
-        background-size:cover;
-        background-repeat: no-repeat;
-        padding: 2rem;
-        position: relative;
-    
-        @include tabletScreen{
-            height: 70vh;
-        }
-
-        @include desktopScreen{
-            height:90vh;
-            display: flex;
-            justify-content:space-around;
-            align-items: center;
-            padding: 0;
-        }
-        
-    }
-
-    &__title-box{
-        @include desktopScreen{
-            flex: 1;
-            max-width: 50%;
-            box-sizing: border-box;
-            margin-left: 6rem;
-        }
-    }
-
-    &__title{
-        color: $White;
-        font-size: 2rem;
-        font-weight: 600;
-        margin: 2rem 0;
-
-        @include desktopScreen{
-            @include deskHeader2;
-        }
-    }
-    &__subtitle{
-        color: $White;
-        font-size: 4rem;
-        font-weight: 600;
-        width: 80%;
-
-        @include desktopScreen{
-            @include deskHeader1;
-        }
-    }
-
-    &__title, &__subtitle, &__media-iframe {
-        position: relative; 
-        z-index: 2; 
-    }
-
-    &__gallery-mask{
-        @include coverStyle;
-        z-index: 1;
-    }
-
-    &__media {
-        @include desktopScreen{
-        flex: 1; 
-        max-width: 50%; 
-        box-sizing: border-box; 
-        }  
-    }
-
-    &__media-iframe{
-        width: 100%;
-        height: 166px;
-        margin-top: 2rem;
-
-        @include desktopScreen{
-            width: 80%;
-        }
-        @include tabletScreen{
-            width: 70%;
-        }
-    }
-}
-
-
-.shows{
-    height: auto;
+    background-image: url(../assets/Images/hero-shows.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
     padding: 2rem;
+    position: relative;
 
-    @include tabletScreen{
-        padding: 3rem;
-        width: 100vw;
-        box-sizing: border-box;
+    @include tabletScreen {
+      height: 70vh;
     }
 
-    @include desktopScreen{
-        width: 100vw;
-        box-sizing: border-box;
-        padding: 3rem 6rem;
-        display: flex;
-        justify-content: space-between;
+    @include desktopScreen {
+      height: 90vh;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 0;
+    }
+  }
+
+  &__title-box {
+    @include desktopScreen {
+      flex: 1;
+      max-width: 50%;
+      box-sizing: border-box;
+      margin-left: 6rem;
+    }
+  }
+
+  &__title {
+    color: $White;
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 2rem 0;
+
+    @include desktopScreen {
+      @include deskHeader2;
+    }
+  }
+  &__subtitle {
+    color: $White;
+    font-size: 4rem;
+    font-weight: 600;
+    width: 80%;
+
+    @include desktopScreen {
+      @include deskHeader1;
+    }
+  }
+
+  &__title,
+  &__subtitle,
+  &__media-iframe {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__gallery-mask {
+    @include coverStyle;
+    z-index: 1;
+  }
+
+  &__media {
+    @include desktopScreen {
+      flex: 1;
+      max-width: 50%;
+      box-sizing: border-box;
+    }
+  }
+
+  &__media-iframe {
+    width: 100%;
+    height: 166px;
+    margin-top: 2rem;
+
+    @include desktopScreen {
+      width: 80%;
+    }
+    @include tabletScreen {
+      width: 70%;
+    }
+  }
+}
+
+.shows {
+  height: auto;
+  padding: 2rem;
+
+  @include tabletScreen {
+    padding: 3rem;
+    width: 100vw;
+    box-sizing: border-box;
+  }
+
+  @include desktopScreen {
+    width: 100vw;
+    box-sizing: border-box;
+    padding: 3rem 6rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__title {
+    font-size: 3rem;
+    font-weight: 600;
+    margin: 2rem 0;
+    @include tabletScreen {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
     }
 
-
-    &__title{
-        font-size: 3rem;
-        font-weight: 600;
-        margin: 2rem 0;
-        @include tabletScreen{
-            margin-top: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        @include desktopScreen{
-            flex: 0 0 auto;
-            margin: 0;
-         }
+    @include desktopScreen {
+      flex: 0 0 auto;
+      margin: 0;
     }
-    &__box{
-        @include desktopScreen{
-           flex: 1;
-           margin-left: 5rem;
-        }
+  }
+  &__box {
+    @include desktopScreen {
+      flex: 1;
+      margin-left: 5rem;
     }
+  }
 
-    &__container{
-        border-bottom: 1px solid $Silver;
-        &:hover{
-            background-color: $Alabaster;
-            cursor: pointer;
-        }
-        @include tabletScreen{
-            display: flex;
-            justify-content:space-between;
-            align-items: end;
-            padding:0 1rem;
-        }
-        @include desktopScreen{
-            display: flex;
-            justify-content: space-between;
-            align-items: end;
-            padding:0 2rem;
-        }
+  &__container {
+    border-bottom: 1px solid $Silver;
+    &:hover {
+      background-color: $Alabaster;
+      cursor: pointer;
     }
-
-    &__subtitle{
-        margin: 1rem 0;
-        color: $Silver;
-        @include tabletScreen{
-            display: none;
-        }
-        @include desktopScreen{
-            display: none;
-        }
+    @include tabletScreen {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      padding: 0 1rem;
     }
-    .first{
-        display: block;
-        padding: 24px 0;
-        font-size: 1.5rem;
-
-        @include desktopScreen{
-            margin-bottom: 2rem;
-            @include deskBody;
-        }
+    @include desktopScreen {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      padding: 0 2rem;
     }
+  }
 
-    &__content{
-        margin-bottom: 1rem;
-        font-size: 1.5rem;
-        color: $Black;
+  &__subtitle {
+    margin: 1rem 0;
+    color: $Silver;
+    @include tabletScreen {
+      display: none;
+    }
+    @include desktopScreen {
+      display: none;
+    }
+  }
+  .first {
+    display: block;
+    padding: 24px 0;
+    font-size: 1.5rem;
 
-        @include tabletScreen{
-            padding: 0 18px 24px 0;
-        }
+    @include desktopScreen {
+      margin-bottom: 2rem;
+      @include deskBody;
+    }
+  }
 
-        @include desktopScreen{
-            padding: 0 18px 24px 0;
-            font-size: 1rem;
-        }
+  &__content {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: $Black;
+
+    @include tabletScreen {
+      padding: 0 18px 24px 0;
     }
 
-    .date{
-        font-weight: 600;
+    @include desktopScreen {
+      padding: 0 18px 24px 0;
+      font-size: 1rem;
+    }
+  }
+
+  .date {
+    font-weight: 600;
+  }
+
+  &__button {
+    width: 100%;
+    height: 5rem;
+    background-color: $Black;
+    margin: 2rem 0;
+    text-align: center;
+    color: $White;
+    line-height: 5rem;
+    font-size: 2rem;
+    font-weight: 600;
+    border-radius: 5px;
+
+    @include tabletScreen {
+      width: 22%;
+      font-size: 1.3rem;
+      height: 4rem;
+      line-height: 4rem;
     }
 
-    &__button{
-        width:100%;
-        height: 5rem;
-        background-color: $Black;
-        margin: 2rem 0;
-        text-align: center;
-        color: $White;
-        line-height: 5rem;
-        font-size: 2rem;
-        font-weight: 600;
-        border-radius: 5px;
-
-        @include tabletScreen{
-            width: 22%;
-            font-size: 1.3rem;
-            height: 4rem;
-            line-height: 4rem;
-        }
-
-        @include desktopScreen{
-            width: 20%;
-            font-size: 1rem;
-            height: 3rem;
-            line-height: 3rem;
-        }
+    @include desktopScreen {
+      width: 20%;
+      font-size: 1rem;
+      height: 3rem;
+      line-height: 3rem;
     }
+  }
 }
