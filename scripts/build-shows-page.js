@@ -1,49 +1,46 @@
-
 const shows = [
-    {
-      date: "Mon Sept 06 2021",
-      venue: "Ronald Lane",
-      location: "San Francisco, CA"
-    },
-    {
-      date: "Tue Sept 21 2021",
-      venue: "Pier 3 East",
-      location: "San Francisco, CA"
-    },
-    {
-      date: "Fri Oct 15 2021",
-      venue: "View Lounge",
-      location: "San Francisco, CA"
-    },
-    {
-      date: "Sat Nov 06 2021",
-      venue: "Hyatt Agency",
-      location: "San Francisco, CA"
-    },
-    {
-      date: "Fri Nov 26 2021",
-      venue: "Moscow Center",
-      location: "San Francisco, CA"
-    },
-    {
-      date: "Wed Dec 15 2021",
-      venue: "Press Club",
-      location: "San Francisco, CA"
-    }
-  ];
-  
+  {
+    date: "Mon Sept 06 2021",
+    venue: "Ronald Lane",
+    location: "San Francisco, CA",
+  },
+  {
+    date: "Tue Sept 21 2021",
+    venue: "Pier 3 East",
+    location: "San Francisco, CA",
+  },
+  {
+    date: "Fri Oct 15 2021",
+    venue: "View Lounge",
+    location: "San Francisco, CA",
+  },
+  {
+    date: "Sat Nov 06 2021",
+    venue: "Hyatt Agency",
+    location: "San Francisco, CA",
+  },
+  {
+    date: "Fri Nov 26 2021",
+    venue: "Moscow Center",
+    location: "San Francisco, CA",
+  },
+  {
+    date: "Wed Dec 15 2021",
+    venue: "Press Club",
+    location: "San Francisco, CA",
+  },
+];
 
-const showContainer = document.getElementById('showContainer');
-const showsBox = document.querySelector('.shows__box');
+const showsBox = document.querySelector(".shows__box");
 
 shows.forEach((show, index) => {
-  const showDiv = document.createElement('div');
-  showDiv.classList.add('shows__container');
+  const showDiv = document.createElement("div");
+  showDiv.classList.add("shows__container");
 
-  let subtitleClass = 'shows__subtitle';
+  let subtitleClass = "shows__subtitle";
 
   if (index === 0) {
-    subtitleClass += ' first';
+    subtitleClass += " first";
   }
 
   showDiv.innerHTML = `
@@ -63,4 +60,16 @@ shows.forEach((show, index) => {
   `;
 
   showsBox.appendChild(showDiv);
+
+  // styling change
+  let isBackgroundColorChanged = false;
+
+  showDiv.addEventListener("click", () => {
+    isBackgroundColorChanged = !isBackgroundColorChanged;
+    if (isBackgroundColorChanged) {
+      showDiv.style.backgroundColor = "#E1E1E1";
+    } else {
+      showDiv.style.backgroundColor = "";
+    }
+  });
 });
