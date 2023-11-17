@@ -27,6 +27,8 @@ class BandSiteApi{
     async getShows(){
         try {
             const response=await axios.get(`${this.baseUrl}showdates?api_key=${this.apiKey}`);
+            const showlist=response.data;
+            return showlist;
         } catch (error) {
             console.log(error);
         }
