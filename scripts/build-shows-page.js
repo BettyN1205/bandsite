@@ -1,3 +1,5 @@
+import BandSiteApi from "./band-site-api.js";
+
 const shows = [
   {
     date: "Mon Sept 06 2021",
@@ -30,6 +32,8 @@ const shows = [
     location: "San Francisco, CA",
   },
 ];
+
+
 
 const showsBox = document.querySelector(".shows__box");
 

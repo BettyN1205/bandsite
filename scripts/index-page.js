@@ -1,5 +1,4 @@
 import BandSiteApi from "./band-site-api.js";
-
 //create default comments
 // const comments = [
 //   {
@@ -26,14 +25,12 @@ import BandSiteApi from "./band-site-api.js";
 function formatRelativeTime(timestamp) {
   const now = Date.now();
   const diff = now - timestamp;
-
   const seconds = Math.floor(diff / 1000);
   const minutes = Math.floor(seconds / 60);
   const hours = Math.floor(minutes / 60);
   const days = Math.floor(hours / 24);
   const months = Math.floor(days / 30);
   const years = Math.floor(months / 12);
-
   if (seconds < 60) {
     return `${seconds} seconds ago`;
   } else if (minutes < 60) {
@@ -49,45 +46,12 @@ function formatRelativeTime(timestamp) {
     const commentDate = new Date(timestamp);
     const yearDifference =
       currentDate.getFullYear() - commentDate.getFullYear();
-
     return `${yearDifference} years ago`;
   }
 }
 
-//rendering defualt commonts
 const apiKey = "c717bcb6-f19a-492d-bc98-0140cbcecc0a";
 const bandSiteApi = new BandSiteApi(apiKey);
-
-async function renderComments() {
-  try {
-    const comments = await bandSiteApi.getComments();
-    const renderContainer = document.querySelector("#comments-render");
-
-    comments.forEach((comment) => {
-      const renderContent = document.createElement("div");
-      renderContent.classList.add("comments__history");
-
-      const timestamp = comment.timestamp;
-
-      renderContent.innerHTML = `
-              <div class="comments__history-img"></div>
-              <div class="comments__history-textBox">
-                  <span class="comments__history-title">${comment.name}</span>
-                  <span class="comments__history-time">${formatRelativeTime(
-                    timestamp
-                  )}</span>
-                  <p class="comments__history-text">${comment.comment}</p>
-              </div>
-          `;
-
-      renderContainer.appendChild(renderContent);
-    });
-  } catch (error) {
-    console.log(error);
-  }
-}
-renderComments();
-
 //adding new comment
 const form = document.querySelector("#commentsform");
 form.addEventListener("submit", async (e) => {
@@ -101,14 +65,17 @@ form.addEventListener("submit", async (e) => {
   if (usernameInput.value.trim() && commentInput.value.trim()) {
     const newComment = {
       name: usernameInput.value,
-      // timestamp:Date.now(),
       comment: commentInput.value,
     };
+    // Add the new comment on API
     await bandSiteApi.postComments(newComment);
+    // Get all comments after adding the new comment
     const comments = await bandSiteApi.getComments();
+    //clean up the page
     commentHistory.forEach((element) => {
       element.innerHTML = "";
     });
+    //only render the latest 3 comments
     for (let i = 0; i < 3; i++) {
       const comment = comments[i];
       const commentContainer = commentHistory[i];
@@ -123,6 +90,7 @@ form.addEventListener("submit", async (e) => {
         </div>
       `;
     }
+
     usernameInput.value = "";
     commentInput.value = "";
     namebox.style.border = "";
@@ -133,3 +101,32 @@ form.addEventListener("submit", async (e) => {
     commentbox.style.border = "1px solid #D22D2D";
   }
 });
+
+//rendering defualt commonts
+
+async function renderComments() {
+  try {
+    const comments = await bandSiteApi.getComments();
+    const defaultComments = comments.slice(-3); // Get the three default comments
+    const renderContainer = document.querySelector("#comments-render");
+    defaultComments.forEach((comment) => {
+      const renderContent = document.createElement("div");
+      renderContent.classList.add("comments__history");
+      const timestamp = comment.timestamp;
+      renderContent.innerHTML = `
+              <div class="comments__history-img"></div>
+              <div class="comments__history-textBox">
+                  <span class="comments__history-title">${comment.name}</span>
+                  <span class="comments__history-time">${formatRelativeTime(
+                    timestamp
+                  )}</span>
+                  <p class="comments__history-text">${comment.comment}</p>
+              </div>
+          `;
+      renderContainer.appendChild(renderContent);
+    });
+  } catch (error) {
+    console.log(error);
+  }
+}
+renderComments();

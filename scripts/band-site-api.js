@@ -23,6 +23,14 @@ class BandSiteApi{
             console.log('Server Response:', error.response.data);
         }
     }
+    
+    async getShows(){
+        try {
+            const response=await axios.get(`${this.baseUrl}showdates?api_key=${this.apiKey}`);
+        } catch (error) {
+            console.log(error);
+        }
+    }
 }
 export default BandSiteApi;
 
