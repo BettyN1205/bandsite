@@ -35,8 +35,16 @@ import BandSiteApi from "./band-site-api.js";
 
 //format timestamp
 function formatDate(timestamp) {
-  const options = { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' };
-  const formattedDate = new Date(timestamp).toLocaleDateString('en-US', options);
+  const options = {
+    weekday: "short",
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  };
+  const formattedDate = new Date(timestamp).toLocaleDateString(
+    "en-US",
+    options
+  );
   return formattedDate;
 }
 
@@ -46,19 +54,19 @@ const bandSiteApi = new BandSiteApi(apiKey);
 
 async function renderShows() {
   try {
-    const shows= await bandSiteApi.getShows();
+    const shows = await bandSiteApi.getShows();
     const showsBox = document.querySelector(".shows__box");
 
     shows.forEach((show, index) => {
       const showDiv = document.createElement("div");
       showDiv.classList.add("shows__container");
-    
+
       let subtitleClass = "shows__subtitle";
-    
+
       if (index === 0) {
         subtitleClass += " first";
       }
-    
+
       showDiv.innerHTML = `
         <div class="shows__container-box">
           <p class="${subtitleClass}">DATE</p>
@@ -74,12 +82,12 @@ async function renderShows() {
         </div>
         <div class="shows__button">BUY TICKETS</div>
       `;
-    
+
       showsBox.appendChild(showDiv);
-    
+
       // styling change
       let isBackgroundColorChanged = false;
-    
+
       showDiv.addEventListener("click", () => {
         isBackgroundColorChanged = !isBackgroundColorChanged;
         if (isBackgroundColorChanged) {
@@ -89,12 +97,9 @@ async function renderShows() {
         }
       });
     });
-    
   } catch (error) {
     console.log(error);
   }
-  
 }
 
 renderShows();
-

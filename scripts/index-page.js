@@ -1,27 +1,8 @@
 import BandSiteApi from "./band-site-api.js";
-//create default comments
-// const comments = [
-//   {
-//     username: "Connor Walton ",
-//     time: "02/17/2021",
-//     content:
-//       "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-//   },
-//   {
-//     username: "Emilie Beach",
-//     time: "01/09/2021",
-//     content:
-//       "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
-//   },
-//   {
-//     username: "Miles Acosta",
-//     time: "12/20/2020",
-//     content:
-//       "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-//   },
-// ];
 
-// Function to format relative time
+const apiKey = "c717bcb6-f19a-492d-bc98-0140cbcecc0a";
+const bandSiteApi = new BandSiteApi(apiKey);
+
 function formatRelativeTime(timestamp) {
   const now = Date.now();
   const diff = now - timestamp;
@@ -50,10 +31,49 @@ function formatRelativeTime(timestamp) {
   }
 }
 
-const apiKey = "c717bcb6-f19a-492d-bc98-0140cbcecc0a";
-const bandSiteApi = new BandSiteApi(apiKey);
+function createElement(comment) {
+  const renderContainer = document.querySelector("#comments-render");
+  const renderContent = document.createElement("div");
+  renderContent.classList.add("comments__history");
+  const timestamp = comment.timestamp;
+  renderContent.innerHTML = `
+            <div class="comments__history-img"></div>
+            <div class="comments__history-textBox">
+                <span class="comments__history-title">${comment.name}</span>
+                <span class="comments__history-time">${formatRelativeTime(
+                  timestamp
+                )}</span>
+                <p class="comments__history-text">${comment.comment}</p>
+                <span class="comments__history-like"><i class="fa-regular fa-heart"></i>${
+                  comment.likes
+                }</span>
+                <span class="comments__history-delete"><i class="fa-regular fa-trash-can"></i></span>
+            </div>
+        `;
+  renderContainer.appendChild(renderContent);
+}
+
+// render default comments
+async function renderComments() {
+  try {
+    const comments = await bandSiteApi.getComments();
+    // Get the last three default comments
+    let arrLength = comments.length;
+    for (let i = arrLength - 3; i < arrLength; i++) {
+      createElement(comments[i]);
+    }
+    addLikes();
+    deleteComment();
+  } catch (error) {
+    console.log(error);
+  }
+}
+renderComments();
+
 //adding new comment
+
 const form = document.querySelector("#commentsform");
+
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
   const usernameInput = e.target.elements.username;
@@ -61,6 +81,8 @@ form.addEventListener("submit", async (e) => {
   const commentbox = document.querySelector(".comments__new-comment");
   const namebox = document.querySelector(".comments__new-name");
   const commentHistory = document.querySelectorAll(".comments__history");
+  const renderContainer = document.querySelector("#comments-render");
+
   //Form Validation
   if (usernameInput.value.trim() && commentInput.value.trim()) {
     const newComment = {
@@ -72,24 +94,13 @@ form.addEventListener("submit", async (e) => {
     // Get all comments after adding the new comment
     const comments = await bandSiteApi.getComments();
     //clean up the page
-    commentHistory.forEach((element) => {
-      element.innerHTML = "";
-    });
-    //only render the latest 3 comments
+    renderContainer.innerHTML = "";
+    // Get the latest three comments
     for (let i = 0; i < 3; i++) {
-      const comment = comments[i];
-      const commentContainer = commentHistory[i];
-      commentContainer.innerHTML = `
-        <div class="comments__history-img"></div>
-        <div class="comments__history-textBox">
-            <span class="comments__history-title">${comment.name}</span>
-            <span class="comments__history-time">${formatRelativeTime(
-              comment.timestamp
-            )}</span>
-            <p class="comments__history-text">${comment.comment}</p>
-        </div>
-      `;
+      createElement(comments[i]);
     }
+    addLikes();
+    deleteComment();
 
     usernameInput.value = "";
     commentInput.value = "";
@@ -102,31 +113,42 @@ form.addEventListener("submit", async (e) => {
   }
 });
 
-//rendering defualt commonts
+addLikes();
+deleteComment();
 
-async function renderComments() {
-  try {
-    const comments = await bandSiteApi.getComments();
-    const defaultComments = comments.slice(-3); // Get the three default comments
-    const renderContainer = document.querySelector("#comments-render");
-    defaultComments.forEach((comment) => {
-      const renderContent = document.createElement("div");
-      renderContent.classList.add("comments__history");
-      const timestamp = comment.timestamp;
-      renderContent.innerHTML = `
-              <div class="comments__history-img"></div>
-              <div class="comments__history-textBox">
-                  <span class="comments__history-title">${comment.name}</span>
-                  <span class="comments__history-time">${formatRelativeTime(
-                    timestamp
-                  )}</span>
-                  <p class="comments__history-text">${comment.comment}</p>
-              </div>
-          `;
-      renderContainer.appendChild(renderContent);
+// add likes
+async function addLikes() {
+  const likes = document.querySelectorAll(".comments__history-like");
+  likes.forEach((like, index) => {
+    like.addEventListener("click", async () => {
+      const comments = await bandSiteApi.getComments();
+      const commentId = comments[index].id;
+      await bandSiteApi.likeComment(commentId);
+      like.innerHTML = `
+      <i class="fa-solid fa-heart"></i>${comments[index].likes}</span>
+      `;
     });
-  } catch (error) {
-    console.log(error);
-  }
+  });
 }
-renderComments();
+
+// delete comments
+async function deleteComment() {
+  const delBtns = document.querySelectorAll(".comments__history-delete");
+  delBtns.forEach((del, index) => {
+    del.addEventListener("click", async () => {
+      const comments = await bandSiteApi.getComments();
+      const commentId = comments[index].id;
+
+      await bandSiteApi.deleteComment(commentId);
+
+      const renderContainer = document.querySelector("#comments-render");
+      renderContainer.innerHTML = "";
+      const latestComments = await bandSiteApi.getComments();
+      for (let i = 0; i < 3; i++) {
+        createElement(latestComments[i]);
+      }
+      addLikes();
+      deleteComment();
+    });
+  });
+}

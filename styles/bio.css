@@ -739,4 +739,21 @@ a:visited {
 .comments__history-text {
   margin-top: 1rem;
   font-size: 1.3rem;
+}
+
+.comments__history-like {
+  color: #D22D2D;
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  display: inline-block;
+  padding: 3px;
+}
+
+.comments__history-delete {
+  color: #AFAFAF;
+  margin-top: 1.5rem;
+  margin-left: 1rem;
+  font-size: 1rem;
+  display: inline-block;
+  padding: 3px;
 }/*# sourceMappingURL=bio.css.map */
